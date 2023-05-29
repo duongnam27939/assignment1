@@ -1,0 +1,37 @@
+<div class="overflow-x-auto">
+    <a routerLink="products/add">Thêm Mới</a>
+    <table class="min-w-full divide-y-2 divide-gray-200 bg-white text-sm">
+      <thead class="ltr:text-left rtl:text-right">
+        <tr>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Stt
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Name
+          </th>
+          <th class="whitespace-nowrap px-4 py-2 font-medium text-gray-900">
+            Price
+          </th>
+          <th class="px-4 py-2"></th>
+        </tr>
+      </thead>
+  
+      <tbody class="divide-y divide-gray-200">
+        <tr *ngFor="let item of products">
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{item.id}}</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{item.name}}</td>
+          <td class="whitespace-nowrap px-4 py-2 text-gray-700">{{item.price}}</td>
+          <td class="whitespace-nowrap px-4 py-2">
+            <button class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700" (click)="removeId(item.id!)">
+              Xóa
+            </button>
+          </td>
+          <td class="whitespace-nowrap px-4 py-2">
+            <a [routerLink]="['/products',item.id,'edit']" class="inline-block rounded bg-indigo-600 px-4 py-2 text-xs font-medium text-white hover:bg-indigo-700" >
+              Sửa
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

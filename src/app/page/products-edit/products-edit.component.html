@@ -1,0 +1,38 @@
+<div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-lg">
+      <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+        Thêm Sản Phẩm
+      </h1>
+      <form class="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8" [formGroup]="productsForm" (ngSubmit)="onHandleSubmit()">
+        <p class="text-center text-lg font-medium">Sign in to your account</p>
+  
+        <div>
+          <label for="name" class="sr-only">Name</label>
+  
+          <div class="relative">
+            <input
+              type="name"
+              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"formControlName="name"
+              placeholder="Name"
+            />
+          </div>
+        </div>
+  
+        <div>
+          <label for="price" class="sr-only">Price</label>
+  
+          <div class="relative">
+            <input
+              type="price"
+              class="w-full rounded-lg border-gray-200 p-4 pe-12 text-sm shadow-sm"formControlName="price"
+              placeholder="Price"
+            />
+          </div>
+        </div>
+  
+        <button type="submit" class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white" [disabled]="!productsForm.valid">
+          Thêm Mới
+        </button>
+      </form>
+    </div>
+  </div>
